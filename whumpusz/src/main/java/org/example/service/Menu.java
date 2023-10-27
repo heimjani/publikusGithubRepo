@@ -2,7 +2,16 @@ package org.example.service;
 
 import java.util.Scanner;
 
+/**
+ * Menü implementálása.
+ */
 public class Menu {
+    /**
+     *  Játék kezdete, felhasználói input.
+
+     * @param args név.
+
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

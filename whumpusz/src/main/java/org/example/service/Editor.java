@@ -3,6 +3,9 @@ package org.example.service;
 import java.util.Scanner;
 
 
+/**
+ * Pályaszerkesztő.
+ */
 public class Editor {
     private static char[][] board;
     public static int N;
@@ -12,6 +15,9 @@ public class Editor {
     private static int heroY;
     private static String heroDirection;
 
+    /**
+     * Szerkesztés kezdete.
+     */
     public static void editMap() {
         Scanner scanner = new Scanner(System.in);
 

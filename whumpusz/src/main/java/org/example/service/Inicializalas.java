@@ -1,12 +1,16 @@
 package org.example.service;
 
+/**
+ * Előkészítés.
+ */
 public class Inicializalas {
 
     public static int N = Editor.N;
     public static char[][] board;
-    public static void main() {
-        System.out.println(99);
-    }
+
+    /**
+     * Falak, üres helyek behatározása.
+     */
     public static void initializeBoard() {
         board = new char[N][N];
         for (int i = 0; i < N; i++) {
