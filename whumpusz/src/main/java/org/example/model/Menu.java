@@ -3,6 +3,7 @@ package org.example.model;
 import java.util.Scanner;
 
 import org.example.service.Editor;
+import org.example.service.Int;
 
 /**
  * Menü implementálása.
@@ -30,7 +31,7 @@ public class Menu {
             System.out.println("2 Játék");
             System.out.println("3 Kilépés");
 
-            int choice = scanner.nextInt();
+            int choice = Int.getIntInput();
             switch (choice) {
                 case 1:
                     Editor.editMap();

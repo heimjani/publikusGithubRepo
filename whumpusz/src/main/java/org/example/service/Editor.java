@@ -16,14 +16,17 @@ public class Editor {
      * Szerkesztés kezdete.
      */
     public static void editMap() {
-        Scanner scanner = new Scanner(System.in);
+
 
         System.out.print("Add meg a pálya méretét: ");
-        N = scanner.nextInt();
+
+
+        N = Int.getIntInput();
         if (N < 6 || N > 20) {
             System.out.println("Érvénytelen szám, minimum 6, maximum 20 nagyságú lehet");
             return;
         }
+
         Inicializalas.initializeBoard();
         wumpusCount = N <= 8 ? 1 : (N <= 14 ? 2 : 3);
         hasGold = false;
@@ -46,8 +49,7 @@ public class Editor {
             System.out.println("10 HŐS eltávolítása");
             System.out.println("11 Szerkesztés befejezése");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine(); // Consumes the newline character
+            int choice = Int.getIntInput();
 
             switch (choice) {
                 case 1:
@@ -58,8 +60,7 @@ public class Editor {
                     break;
                 case 3:
                     if (wumpusCount > 0) {
-                        addElement('U');
-                        wumpusCount--;
+                        addWumpusz();
                     } else {
                         System.out.println("Nincs több wumpusz hozzáadható.");
                     }
@@ -173,7 +174,7 @@ public class Editor {
         int y = Character.getNumericValue(position.charAt(1));
 
         if (x < 1 || x >= N - 1 || y < 1 || y >= N - 1) {
-            System.out.println("A HŐS nem helyezhető a szélekhez vagy a falhoz közel.");
+            System.out.println("A HŐS nem helyezhető a szélekhez közel.");
             return;
         }
 
@@ -188,4 +189,31 @@ public class Editor {
             System.out.println("A megadott pozíció már foglalt.");
         }
     }
+    private static void addWumpusz() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Add meg a WUMPUSZ kezdő pozícióját (pl. 'c3'): ");
+        String position = scanner.nextLine().toUpperCase();
+        if (position.length() != 2 || !Character.isLetter(position.charAt(0)) || !Character.isDigit(position.charAt(1))) {
+            System.out.println("Érvénytelen pozíció formátum. Használj pl. 'a1' formátumot.");
+            return;
+        }
+
+        int x = position.charAt(0) - 'A' + 1;
+        int y = Character.getNumericValue(position.charAt(1));
+
+        if (x < 1 || x >= N - 1 || y < 1 || y >= N - 1) {
+            System.out.println("A WUMPUSZ nem helyezhető a szélekhez közel.");
+            return;
+        }
+
+        if (Inicializalas.board[y][x] == ' ') {
+            Inicializalas.board[y][x] = 'U';
+            wumpusCount--;
+            System.out.println("Felkelt egy WUMPUSZ");
+        } else {
+            System.out.println("A megadott pozíció már foglalt.");
+        }
+    }
 }
+
