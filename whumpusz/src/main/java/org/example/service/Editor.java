@@ -7,13 +7,10 @@ import java.util.Scanner;
  * Pályaszerkesztő.
  */
 public class Editor {
-    private static char[][] board;
     public static int N;
     private static int wumpusCount;
     private static boolean hasGold;
-    private static int heroX;
-    private static int heroY;
-    private static String heroDirection;
+     private static String heroDirection;
 
     /**
      * Szerkesztés kezdete.
@@ -182,8 +179,7 @@ public class Editor {
 
         if (Inicializalas.board[y][x] == ' ') {
             Inicializalas.board[y][x] = 'H';
-            heroX = x;
-            heroY = y;
+
 
             System.out.print("Add meg a HŐS kezdő irányát (felfelé, lefelé, balra, jobbra): ");
             heroDirection = scanner.nextLine();
