@@ -2,8 +2,8 @@ package org.example.model;
 
 import java.util.Scanner;
 
-import org.example.service.Editor;
 import org.example.service.Int;
+import org.example.service.editor.Editor;
 
 /**
  * Menü implementálása.
