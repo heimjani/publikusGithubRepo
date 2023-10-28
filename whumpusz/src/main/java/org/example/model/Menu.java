@@ -1,6 +1,8 @@
-package org.example.service;
+package org.example.model;
 
 import java.util.Scanner;
+
+import org.example.service.Editor;
 
 /**
  * Menü implementálása.
@@ -23,8 +25,8 @@ public class Menu {
 
         boolean exit = false;
         while (!exit) {
-            System.out.println("\nAlapmenü:");
-            System.out.println("1 Pályaszerkesztés");
+            System.out.println("\nMenü:");
+            System.out.println("1 Pályaszerkesztő");
             System.out.println("2 Játék");
             System.out.println("3 Kilépés");
 

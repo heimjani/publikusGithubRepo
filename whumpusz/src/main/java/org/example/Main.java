@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.service.Menu;
+import org.example.model.Menu;
 
 /**
  * Main.
