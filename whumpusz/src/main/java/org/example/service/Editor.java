@@ -10,7 +10,7 @@ public class Editor {
     public static int N;
     private static int wumpusCount;
     private static boolean hasGold;
-     private static String heroDirection;
+    private static String heroDirection;
 
     /**
      * Szerkesztés kezdete.
@@ -181,7 +181,7 @@ public class Editor {
             Inicializalas.board[y][x] = 'H';
 
 
-            System.out.print("Add meg a HŐS kezdő irányát (felfelé, lefelé, balra, jobbra): ");
+            System.out.print("Add meg a HŐS kezdő irányát (észak, dél, nyugat, kelet): ");
             heroDirection = scanner.nextLine();
             System.out.println("HŐS hozzáadva!");
         } else {
